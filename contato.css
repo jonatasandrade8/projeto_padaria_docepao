@@ -1,0 +1,175 @@
+/* Reset básico para uniformizar o estilo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #d2691e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Menu */
+nav {
+    background-color: #f4a460;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #cd853f;
+}
+
+nav a.active {
+    background-color: #d2691e;
+    color: #fff;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    margin-top: 10px;
+    color: #d2691e;
+}
+
+main p {
+    margin-bottom: 15px;
+}
+
+/* Formulário */
+form {
+    margin-top: 15px;
+}
+
+fieldset {
+    border: 2px solid #d2691e;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+legend {
+    font-weight: bold;
+    color: #8b4513;
+    padding: 0 5px;
+}
+
+/* Labels e inputs */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Foco */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #d2691e;
+    box-shadow: 0 0 4px rgba(210,105,30,0.5);
+}
+
+/* Botão */
+button {
+    margin-top: 15px;
+    background-color: #d2691e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #a0522d;
+}
+
+/* Validação */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border-color: #cc0000;
+}
+
+input:valid,
+textarea:valid,
+select:valid {
+    border-color: #228b22;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Envie seu feedback para a Padaria Doce Pão">
+    <title>Feedback - Padaria Doce Pão</title>
+    <link rel="stylesheet" href="./css/feedback.css">
+</head>
+<body>
+    <header>
+        <h1>Padaria Doce Pão</h1>
+        <p>Tradição e sabor em cada fornada</p>
+    </header>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="contato.html">Contato</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="feedback.html" class="active">Feedback</a>
+        <a href="cadastro.html">Cadastro</a>
+    </nav>
+
+    <main class="formulario-container">
+        <h2>Deixe aqui seu Feedback!</h2>
+        <p> Queremos te ouvir, avalie sua experiência conosco.</p>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Seus Dados</legend>
+                <label for="nome">Seu Nome (Opcional):</label>
+                <input type="text" id="nome" name="nome">
+
+                <label for="email">Seu E-mail (Opcional):</label>
+                <input type="email" id="email" name="email">
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalhes do Feedback</legend>
+                <label for="produto_servico">O que você está avaliando?</label>
+                <select id="produto_servico" name="produto_servico" required>
+                    <option value="">-- Selecione um item --</option>
+                    <option value="paes">Pães Tradicionais</option>
+                    <option value="doces">Doces e Bolos</option>
+                    <option value="salgados">Salgados</option>
+                    <option value="atendimento">Atendimento</option>
+                    <option value="ambiente">Ambiente da Loja</option>
+                    <option value="precos">Preços</option>
+                </select>
+
+                <p>Qual sua avaliação geral?</p>
+                <label><input type="radio" name="avaliacao" value="excelente" required> 🌟 Excelente</label>
+                <label><input type="radio" name="avaliacao" value="bom"> 👍 Bom</label>
+                <label><input type="radio" name="avaliacao" value="regular"> 😐 Regular</label>
+                <label><input type="radio" name="avaliacao" value="ruim"> 👎 Ruim</label>
+
+                <label for="comentarios">Comentários:</label>
+                <textarea id="comentarios" name="comentarios" rows="5" placeholder="Gostamos muito de... / Vocês poderiam melhorar em..."></textarea>
+
+                <label><input type="checkbox" name="recomenda" value="sim"> Eu recomendaria a Padaria para amigos e familiares.</label>
+                <label><input type="checkbox" name="publica" value="sim"> Autorizo a publicação deste depoimento no site (sem exibir e-mail).</label>
+            </fieldset>
+
+            <button type="submit">Enviar Feedback</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Padaria Doce Pão. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

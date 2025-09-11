@@ -1,0 +1,347 @@
+/* ===================== RESET BÁSICO ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== CORPO ===================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 140px; /* Espaço para o header fixo */
+}
+
+/* ===================== CABEÇALHO FIXO ===================== */
+header {
+    background-color: #d2691e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    font-size: 2.5em;
+    transition: all 0.3s ease;
+}
+
+/* ===================== MENU PRINCIPAL ===================== */
+nav {
+    background-color: #f4a460;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    position: sticky;
+    top: 100px;
+    z-index: 900;
+    transition: all 0.3s ease;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #cd853f;
+}
+
+nav a.active {
+    background-color: #d2691e;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* ===================== BOTÃO MENU HAMBÚRGUER ===================== */
+.menu-toggle {
+    display: none; /* Escondido por padrão (desktop) */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #d2691e;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 1100;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* ===================== MENU LATERAL (MOBILE) ===================== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #f4a460;
+    z-index: 1000;
+    padding: 80px 20px 20px;
+    transition: all 0.4s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.side-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+.side-menu a:hover {
+    background-color: #cd853f;
+}
+
+/* Overlay escuro quando o menu lateral está ativo */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===================== CONTEÚDO CENTRALIZADO ===================== */
+.titulos {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* ===================== GALERIA ===================== */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== VÍDEO RESPONSIVO ===================== */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
+    border: none;
+}
+
+/* ===================== TABELAS ===================== */
+table {
+    width: 90%;
+    margin: 15px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th {
+    background-color: #f4a460;
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr {
+    transition: background-color 0.3s ease;
+}
+
+table tr:hover {
+    background-color: #ffe4c4;
+}
+
+/* ===================== LISTA ===================== */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+    font-size: 1.1em;
+}
+
+/* ===================== RODAPÉ ===================== */
+footer {
+    background-color: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* ===================== BOTÃO WHATSAPP ===================== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ===================== BOTÃO VOLTAR AO TOPO ===================== */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #d2691e;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #a0522d;
+    transform: translateY(-5px);
+}
+
+/* ===================== PRODUTOS EM DESTAQUE ===================== */
+.produto-destaque {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-destaque:hover {
+    transform: translateY(-5px);
+}
+
+/* ===================== MEDIA QUERY - MOBILE ===================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    /* Esconde o menu principal em mobile */
+    nav {
+        display: none;
+    }
+
+    /* Mostra o menu hambúrguer apenas no mobile */
+    .menu-toggle {
+        display: flex;
+    }
+
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .back-to-top {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
