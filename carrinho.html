@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Padaria Doce Pão</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="carrinho-page">
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="side-menu">
+        <a href="index.html">Início</a>
+        <a href="contato.html">Contato</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="carrinho.html" class="active">Carrinho</a>
+    </div>
+    
+    <div class="menu-overlay"></div>
+
+    <header id="cabecalho-principal">
+        <h1>Padaria Doce Pão</h1>
+        <p>Tradição e sabor em cada fornada</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="contato.html">Contato</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="carrinho.html" class="active">Carrinho</a>
+    </nav>
+
+    <main class="sistema-interativo">
+        <h2>Finalizar Compra e Delivery</h2>
+        
+        <div class="painel-controle">
+            <div class="secao">
+                <h3>Seu Carrinho</h3>
+                <div id="carrinho-final">
+                    <p>Seu carrinho está vazio. Volte para a página de <a href="pedidos.html">Pedidos</a> para adicionar itens.</p>
+                </div>
+            </div>
+            
+            <div class="secao">
+                <h3>Informações de Entrega e Pagamento</h3>
+                
+                <div class="form-group">
+                    <label for="distancia">Distância de Entrega (km):</label>
+                    <input type="number" id="distancia" min="0" step="0.1" value="0" oninput="atualizarTotalComEntrega()">
+                </div>
+
+                <div class="resultado" id="resumo-pagamento">
+                    <h4>Resumo da Transação</h4>
+                    <p>Subtotal: R$ <span id="subtotal-final">0.00</span></p>
+                    <p>Desconto: R$ <span id="desconto-final">0.00</span></p>
+                    <p>Imposto (8%): R$ <span id="imposto-final">0.00</span></p>
+                    <p>Taxa de Entrega: R$ <span id="taxa-entrega">0.00</span></p>
+                    <p>Frete Grátis: <span id="frete-gratis">Não</span></p>
+                    <p>Total a Pagar: R$ <span id="total-final">0.00</span></p>
+                    <p>Pontos Ganhos: <span id="pontos">0</span></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor-pago">Valor Pago (R$):</label>
+                    <input type="number" id="valor-pago" min="0" step="0.01" placeholder="0.00" oninput="calcularTroco()">
+                </div>
+
+                <div class="resultado">
+                    <p>Troco: R$ <span id="troco">0.00</span></p>
+                </div>
+
+                <div class="moeda-opcoes">
+                    <p>Total em outras moedas:</p>
+                    <div class="resultado-moeda" id="moeda-convertida-final"></div>
+                </div>
+                
+                <button class="btn-finalizar" onclick="finalizarPagamento()">Confirmar Pagamento</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Padaria Doce Pão. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Padaria Doce Pão</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="carrinho-page">
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="side-menu">
+        <a href="index.html">Início</a>
+        <a href="contato.html">Contato</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="carrinho.html" class="active">Carrinho</a>
+    </div>
+    
+    <div class="menu-overlay"></div>
+
+    <header id="cabecalho-principal">
+        <h1>Padaria Doce Pão</h1>
+        <p>Tradição e sabor em cada fornada</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="contato.html">Contato</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="carrinho.html" class="active">Carrinho</a>
+    </nav>
+
+    <main class="sistema-interativo">
+        <h2>Finalizar Compra e Delivery</h2>
+        
+        <div class="painel-controle">
+            <div class="secao">
+                <h3>Seu Carrinho</h3>
+                <div id="carrinho-final">
+                    <p>Seu carrinho está vazio. Volte para a página de <a href="pedidos.html">Pedidos</a> para adicionar itens.</p>
+                </div>
+            </div>
+            
+            <div class="secao">
+                <h3>Informações de Entrega e Pagamento</h3>
+                
+                <div class="form-group">
+                    <label for="distancia">Distância de Entrega (km):</label>
+                    <input type="number" id="distancia" min="0" step="0.1" value="0" oninput="atualizarTotalComEntrega()">
+                </div>
+
+                <div class="resultado" id="resumo-pagamento">
+                    <h4>Resumo da Transação</h4>
+                    <p>Subtotal: R$ <span id="subtotal-final">0.00</span></p>
+                    <p>Desconto: R$ <span id="desconto-final">0.00</span></p>
+                    <p>Imposto (8%): R$ <span id="imposto-final">0.00</span></p>
+                    <p>Taxa de Entrega: R$ <span id="taxa-entrega">0.00</span></p>
+                    <p>Frete Grátis: <span id="frete-gratis">Não</span></p>
+                    <p>Total a Pagar: R$ <span id="total-final">0.00</span></p>
+                    <p>Pontos Ganhos: <span id="pontos">0</span></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor-pago">Valor Pago (R$):</label>
+                    <input type="number" id="valor-pago" min="0" step="0.01" placeholder="0.00" oninput="calcularTroco()">
+                </div>
+
+                <div class="resultado">
+                    <p>Troco: R$ <span id="troco">0.00</span></p>
+                </div>
+
+                <div class="moeda-opcoes">
+                    <p>Total em outras moedas:</p>
+                    <div class="resultado-moeda" id="moeda-convertida-final"></div>
+                </div>
+                
+                <button class="btn-finalizar" onclick="finalizarPagamento()">Confirmar Pagamento</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Padaria Doce Pão. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

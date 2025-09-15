@@ -3,96 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/pedidos.css">
-    <title>Pedidos Especiais - Padaria do Bairro</title>
+    <title>Pedidos - Padaria Doce Pão</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
- 
-    <header>
+<body class="pedidos-page">
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="side-menu">
+        <a href="index.html">Início</a>
+        <a href="contato.html">Contato</a>
+        <a href="pedidos.html" class="active">Pedidos</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="carrinho.html">Carrinho</a>
+    </div>
+    
+    <div class="menu-overlay"></div>
+
+    <header id="cabecalho-principal">
         <h1>Padaria Doce Pão</h1>
         <p>Tradição e sabor em cada fornada</p>
     </header>
+
     <nav>
         <a href="index.html">Início</a>
         <a href="contato.html">Contato</a>
         <a href="pedidos.html" class="active">Pedidos</a>
         <a href="feedback.html">Feedback</a>
         <a href="cadastro.html">Cadastro</a>
+        <a href="carrinho.html">Carrinho</a>
     </nav>
  
-    <main>
+    <main class="sistema-interativo">
+        <h2>Faça seu Pedido</h2>
         
-        <form action="#" method="post">
-            <h2>Faça sua Encomenda</h2>
-                <p>Planejando uma festa ou um evento? Deixe com a gente! Preencha os detalhes abaixo.</p>
- 
-            <fieldset class="adicionais">
-                <legend>Seus Dados</legend>
-                <p>
-                    <label for="nome">Nome Completo:</label><br>
-                    <input type="text" id="nome" name="nome" required>
-                </p>
-                <p>
-                    <label for="telefone">Telefone para Contato:</label><br>
-                    <input type="tel" id="telefone" name="telefone" pattern="\([0-9]{2}\)\s[0-9]{4,5}-[0-9]{4}" required placeholder="(XX) XXXXX-XXXX">
-                </p>
-                <p>
-                    <label for="email">E-mail:</label><br>
-                    <input type="email" id="email" name="email" required>
-                </p>
-            </fieldset>
- 
-            <fieldset>
-                <legend>Detalhes do Pedido</legend>
-                <p>
-                    <label>Tipo de Produto:</label><br>
-                    <input type="radio" id="tipo_bolo" name="tipo_produto" value="bolo" required> <label for="tipo_bolo">Bolo</label><br>
-                    <input type="radio" id="tipo_torta" name="tipo_produto" value="torta"> <label for="tipo_torta">Torta</label><br>
-                    <input type="radio" id="tipo_salgados" name="tipo_produto" value="salgados"> <label for="tipo_salgados">Salgados (cento)</label>
-                </p>
-                <p>
-                    <label for="sabor">Sabor/Recheio Principal:</label><br>
-                    <select id="sabor" name="sabor" required>
-                        <option value="">-- Escolha uma opção --</option>
-                        <option value="chocolate">Chocolate com Brigadeiro</option>
-                        <option value="morango">Morango com Ninho</option>
-                        <option value="baunilha">Baunilha com Doce de Leite</option>
-                        <option value="frango">Frango com Catupiry (para salgados/tortas)</option>
-                    </select>
-                </p>
-                 <p>
-                    <label>Tamanho:</label><br>
-                    <input type="radio" id="tam_pequeno" name="tamanho" value="pequeno" required> <label for="tam_pequeno">Pequeno (serve 10 pessoas)</label><br>
-                    <input type="radio" id="tam_medio" name="tamanho" value="medio"> <label for="tam_medio">Médio (serve 20 pessoas)</label><br>
-                    <input type="radio" id="tam_grande" name="tamanho" value="grande"> <label for="tam_grande">Grande (serve 30+ pessoas)</label>
-                </p>
-                <p>
-                    <label for="data_entrega">Data de Entrega:</label><br>
-                    <input type="date" id="data_entrega" name="data_entrega" required>
-                </p>
-            </fieldset>
-           
-            <fieldset>
-                <legend>Informações Adicionais</legend>
-                <p>
-                    <label for="obs">Observações Especiais:</label><br>
-                    <textarea id="obs" name="obs" rows="5" cols="50" placeholder="Ex: Alergias, decoração específica, etc."></textarea>
-                </p>
-                <p>
-                    <label for="orcamento">Orçamento Máximo (R$):</label><br>
-                    <input type="number" id="orcamento" name="orcamento" min="50" step="2" placeholder="Ex: 150">
-                </p>
-            </fieldset>
- 
-            <p>
-                <button type="submit">Enviar Pedido</button>
-            </p>
-        </form>
+        <div class="painel-controle">
+            <div class="secao">
+                <h3>Produtos Disponíveis</h3>
+                <div id="lista-produtos">
+                    </div>
+            </div>
+            
+            <div class="secao">
+                <h3>Detalhes do seu Pedido</h3>
+                <div id="carrinho">
+                    </div>
+                
+                <div class="resultado" id="resumo-pedido">
+                    <h4>Resumo do Pedido</h4>
+                    <p>Subtotal: R$ <span id="subtotal">0.00</span></p>
+                    <p>Desconto: R$ <span id="valor-desconto">0.00</span></p>
+                    <p>Total: R$ <span id="total">0.00</span></p>
+                </div>
+
+                <div class="moeda-opcoes">
+                    <p>Ver preços em:</p>
+                    <button onclick="converterMoeda('BRL')">BRL</button>
+                    <button onclick="converterMoeda('USD')">USD</button>
+                    <button onclick="converterMoeda('EUR')">EUR</button>
+                    <div class="resultado-moeda" id="moeda-convertida"></div>
+                </div>
+                
+                <button class="btn-finalizar" onclick="window.location.href='carrinho.html'">Finalizar Compra</button>
+            </div>
+        </div>
     </main>
  
     <footer>
         <p>&copy; 2025 Padaria Doce Pão. Todos os direitos reservados.</p>
     </footer>
- 
+    <script src="./script.js"></script>
 </body>
 </html>

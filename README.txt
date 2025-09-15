@@ -1,59 +1,34 @@
-https://jonatasandrade8.github.io/projeto_padaria_docepao/
-# Padaria Doce Pão
+# Site Responsivo - Padaria Doce Pão
 
-**Tradição e sabor em cada fornada!**  
-Site institucional da Padaria Doce Pão, trazendo informações sobre a história, produtos, diferenciais, localização e horários de funcionamento.
+## 📌 Estrutura do Projeto
+- index.html → Página inicial com galeria, cardápio, diferenciais e horários.
+- pedidos.html → Formulário de pedidos especiais.
+- contato.html → Formulário de contato.
+- cadastro.html → Formulário de cadastro de clientes.
+- feedback.html → Formulário de feedback.
+- css/style.css → Estilos globais e responsivos.
 
----
+## 📐 Breakpoints Utilizados
+- Extra Small (até 320px) → Ajuste para celulares muito pequenos.
+- Small (até 480px) → Smartphones padrão.
+- Medium (até 768px) → Tablets e celulares grandes.
+- Large (até 1024px) → Tablets maiores e notebooks pequenos.
+- Default (acima de 1024px) → Desktop.
 
-## Descrição
-A **Padaria Doce Pão** nasceu em 1995 com a missão de oferecer pães fresquinhos todos os dias para a comunidade. O site foi desenvolvido para apresentar:
-- Nossa história e tradição
-- Lista de produtos
-- Diferenciais de qualidade
-- Localização e horários de funcionamento
+## 🎯 Boas Práticas Implementadas
+- Abordagem **Mobile First** nas media queries.
+- Tipografia fluida com `clamp()`, `rem`, `em`.
+- Sistema de **Grid** e **Flexbox** para responsividade.
+- **Menu Hambúrguer** ativado em telas menores.
+- Imagens com `max-width: 100%`, `object-fit: cover` e `loading="lazy"`.
+- Vídeos responsivos com `iframe` em container flexível.
+- Formulários otimizados para **mobile** (inputs grandes e acessíveis).
+- Botões com tamanho **mínimo 44px** para toque confortável.
+- Tabelas responsivas com `overflow-x` em telas menores.
+- Acessibilidade: `prefers-contrast`, `prefers-reduced-motion`.
+- Testado em orientação **portrait** e **landscape**.
 
----
-
-
-## Tecnologias Utilizadas
-- **HTML5** para estrutura
-- **CSS3** *(opcional, para estilização futura)*
-- **JavaScript** *(opcional, para interatividade futura)*
-
----- 
-## Uso de seletores descendentes (ex.: .produtos p)
-- Uso de filho direto (ex.: nav > a)
-- Pseudo-classes aplicadas:
-  * :hover em botões e links
-  * :first-child e :last-child em tabelas
-  * :nth-child(even) para alternar linhas de tabela
-
-
-## Funcionalidades
-- Apresentação da história da padaria
-- Lista de produtos com ícones
-- Diferenciais competitivos
-- Endereço e horários de funcionamento
-
----
-
-
-## Localização
-**Rua dos Sabores, 123 - Centro, São Paulo - SP**
-
----
-
-
-## Horários de Funcionamento
-- **Segunda a Sexta:** 06h às 19h  
-- **Sábado:** 06h às 18h  
-- **Domingo:** 07h às 12h  
-
----
-
-
-## Licença
-© 2025 Padaria Doce Pão. Todos os direitos reservados.
-"""
-
+## ⚡ Dicas de Teste
+1. Abra o DevTools (F12) e teste em diferentes resoluções.
+2. Ative modo de conexão lenta (3G) para verificar lazy loading.
+3. Valide em dispositivos reais (celular/tablet).
